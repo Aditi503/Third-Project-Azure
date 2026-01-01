@@ -1,0 +1,48 @@
+
+# ---- Core Web ----
+Flask>=1.1.4,<2.3
+Werkzeug>=1.0.1,<2.3
+Jinja2>=2.11.3,<3.2
+MarkupSafe>=2.1.2
+itsdangerous>=1.1.0,<2.1
+click>=7.1.2,<9.0
+
+# ---- Database ----
+SQLAlchemy>=1.4.54,<2.0
+Flask-SQLAlchemy>=2.5.1
+psycopg2-binary>=2.9.9
+
+# ---- Azure SDK (legacy compatible) ----
+azure-servicebus>=7.11.0
+msrest>=0.7.1
+msrestazure>=0.6.4
+uamqp>=1.6.0
+
+# ---- Auth / Security ----
+cryptography>=41.0.0
+cffi>=1.16.0
+PyJWT>=2.8.0
+oauthlib>=3.2.2
+
+# ---- HTTP ----
+requests>=2.31.0
+urllib3>=1.26.18
+certifi>=2023.7.22
+idna>=3.4
+chardet>=5.2.0
+
+# ---- Utilities ----
+python-dateutil>=2.8.2
+six>=1.16.0
+
+# ---- Email ----
+sendgrid>=6.11.0
+python-http-client>=3.3.7
+
+# ---- Dev / Lint (safe on 3.11) ----
+pylint>=2.17.0
+astroid>=2.15.0
+isort>=5.13.2
+lazy-object-proxy>=1.10.0
+wrapt>=1.15.0
+toml>=0.10.2
