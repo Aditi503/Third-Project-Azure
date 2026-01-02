@@ -81,8 +81,100 @@ Overall, the selected Azure services ensure that the application remains scalabl
 ## Architecture Explanation
 Architecture Explanation
 
-The application follows a simple and cost-effective Azure architecture. The Azure Web App (F1 Free Plan) hosts the main application and handles incoming user requests at no infrastructure cost. The Azure PostgreSQL Database (Basic Plan) is used for structured data storage, offering sufficient performance for low to moderate workloads at minimal expense.
+This project uses a simple, scalable, and cost-effective Azure architecture designed specifically for academic and prototype-level deployment. The architecture focuses on minimizing operational costs while maintaining reliability and clear separation of responsibilities between components.
+
+1. Azure Web App (App Service – F1 Free Plan)
+
+The Azure Web App is used to host the main application and handle all incoming user requests.
+The F1 (Free) plan was selected because it provides sufficient resources for low-traffic academic and prototype applications at zero cost. This makes it ideal for development, testing, and demonstration purposes without incurring monthly charges.
+
+Purpose:
+
+Hosts the main web application
+
+Handles user requests and responses
+
+Acts as the entry point of the system
+
+Reason for Cost-Effectiveness:
+
+Free tier with no monthly cost
+
+Eliminates infrastructure management overhead
+
+Suitable for low to moderate workloads
+
+2. Azure Function (Consumption Plan)
+
+An Azure Function is used for background and asynchronous processing. It is triggered by messages from the Azure Service Bus Queue. The Consumption Plan was selected because it charges only for actual executions, making it extremely cost-efficient.
+
+Purpose:
+
+Processes background tasks asynchronously
+
+Handles event-driven operations
+
+Improves system responsiveness by offloading long-running tasks
+
+Reason for Cost-Effectiveness:
+
+Pay-per-execution model
+
+No cost when the function is idle
+
+Automatically scales based on demand
+
+3. Azure Database for PostgreSQL (Basic Plan)
+
+The Azure Database for PostgreSQL is used to store structured application data such as user information and transactional records. The Basic plan was selected to balance affordability with sufficient performance for academic use cases.
+
+Purpose:
+
+Stores persistent and structured data
+
+Supports relational queries and data integrity
+
+Acts as the primary data store for the application
+
+Reason for Cost-Effectiveness:
+
+Lower pricing compared to higher tiers
+
+Adequate performance for low-volume workloads
+
+Managed service reduces maintenance costs
+
+4. Azure Service Bus (Basic Queue)
+
+The Azure Service Bus Basic Queue is used to enable asynchronous communication between the Azure Web App and the Azure Function. This helps decouple application components and improves reliability.
+
+Purpose:
+
+Stores messages for background processing
+
+Enables reliable, asynchronous communication
+
+Decouples the web application from background tasks
+
+Reason for Cost-Effectiveness:
+
+Low-cost messaging service
+
+Suitable for basic queue-based communication
+
+Ensures reliability without complex infrastructure
+
+Overall Architecture Benefits
+
+Low operational cost using free and consumption-based services
+
+Scalable architecture suitable for future enhancements
+
+Reliable and decoupled system design
+
+Ideal for academic, learning, and prototype-level deployments
 
 For background and asynchronous processing, an Azure Function (Consumption Plan) is used. The function is triggered by messages from the Azure Service Bus Basic Queue, which helps decouple system components, improve reliability, and reduce tight dependencies between services. Since the function runs only when triggered, it further contributes to cost efficiency.
+
 
 This architecture is easy to manage, supports future scalability, and aligns well with Azure best practices, making it ideal for academic, learning, and prototype-level deployments
